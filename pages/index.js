@@ -7,11 +7,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-
+import Navbar from "../components/Navbar/Navbar";
 export default function Home() {
   return (
-    <Container maxW="container.xl" px={4} pt={5}>
-      <Heading as="h1" mb={4} fontSize={"3xl"}>
+    <Container maxW="container.xl" px={4} pt={5} height="100vh">
+      <Navbar/>
+      <Heading as="h1" mb={4} fontSize={"3xl"} >
         Bienvenue dans le Cytadel
       </Heading>
       <Text as={"span"} fontSize="xl" mb={4}>
@@ -27,7 +28,6 @@ export default function Home() {
           <Text
             as={"h2"}
             mb={2}
-            textMuted={true}
             fontSize="xl"
             color="gray.400"
           >
@@ -50,7 +50,6 @@ export default function Home() {
           <Text
             as={"h2"}
             mb={2}
-            textMuted={true}
             fontSize="xl"
             color="gray.400"
           >
@@ -61,11 +60,12 @@ export default function Home() {
             {" "}
             Ajoutez, invitez et discutez avec les differents membres.
           </Text>
-          <NextLink href="/utilisateurs" passHref>
+          <NextLink href="/users" passHref>
             <Link>Membres</Link>
           </NextLink>
         </Box>{" "}
       </SimpleGrid>
+
     </Container>
   );
 }
